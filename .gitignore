@@ -1,0 +1,10 @@
+dumps
+target
+.idea
+*.iml
+.classpath
+.project
+.settings
+.tmp
+.merge_file*
+.DS_Store
