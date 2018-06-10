@@ -29,8 +29,8 @@ public class HikariCPDataSourceConfig {
         config.setJdbcUrl(env.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));
         config.setUsername(env.getRequiredProperty(PROPERTY_NAME_DATABASE_USERNAME));
         config.setPassword(env.getRequiredProperty(PROPERTY_NAME_DATABASE_PASSWORD));
-        Integer poolSize = env.getProperty(PROPERTY_NAME_POOL_SIZE,Integer.class,DEFAULT_POOL_SIZE);
-        config.setMaximumPoolSize(poolSize);
+//        Integer poolSize = env.getProperty(PROPERTY_NAME_POOL_SIZE,Integer.class,DEFAULT_POOL_SIZE);
+//        config.setMaximumPoolSize(poolSize);
         return config;
     }
 
