@@ -25,6 +25,7 @@ public class LectureCategories {
             joinColumns = {@JoinColumn(name="category_id", referencedColumnName="id")},
             inverseJoinColumns = {@JoinColumn(name="lecture_id", referencedColumnName="id")}
     )
+    private Lectures lecture;
 
     public Long getId() {
         return id;

@@ -22,6 +22,11 @@ public class Lectures {
 
     private String lectureCity;
 
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinTable(name="lecture_categories",
+            joinColumns = {@JoinColumn(name="lecture_id", referencedColumnName="id")},
+            inverseJoinColumns = {@JoinColumn(name="category_id", referencedColumnName="id")}
+    )
     private Set<LectureCategories> lectureCategory;
 
     private String lectureSpeaker;
@@ -39,12 +44,6 @@ public class Lectures {
     private UserInfo lectureUploadedBy;
 
     private UserInfo lectureUpdatedBy;
-
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinTable(name="lecture_categories",
-            joinColumns = {@JoinColumn(name="lecture_id", referencedColumnName="id")},
-            inverseJoinColumns = {@JoinColumn(name="category_id", referencedColumnName="id")}
-    )
 
     public Long getId() {
         return id;
