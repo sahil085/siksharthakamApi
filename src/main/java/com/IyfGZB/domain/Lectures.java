@@ -2,6 +2,7 @@ package com.IyfGZB.domain;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 public class Lectures {
@@ -21,7 +22,7 @@ public class Lectures {
 
     private String lectureCity;
 
-    private LectCategories lectureCategory;
+    private Set<LectureCategories> lectureCategory;
 
     private String lectureSpeaker;
 
@@ -38,6 +39,12 @@ public class Lectures {
     private UserInfo lectureUploadedBy;
 
     private UserInfo lectureUpdatedBy;
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinTable(name="lecture_categories",
+            joinColumns = {@JoinColumn(name="lecture_id", referencedColumnName="id")},
+            inverseJoinColumns = {@JoinColumn(name="category_id", referencedColumnName="id")}
+    )
 
     public Long getId() {
         return id;
@@ -87,12 +94,12 @@ public class Lectures {
         this.lectureCity = lectureCity;
     }
 
-    public LectCategories getLectureCategory() {
+    public Set<LectureCategories> getLectureCategory() {
         return lectureCategory;
     }
 
-    public void setLectureCategory(LectCategories lectureCategory) {
-        this.lectureCategory = lectureCategory;
+    public void setLectureCategory(Set<LectureCategories> lectureCategory) {
+        this.lectureCategory = (Set<LectureCategories>) lectureCategory;
     }
 
     public String getLectureSpeaker() {
