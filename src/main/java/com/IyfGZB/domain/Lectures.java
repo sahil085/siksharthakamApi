@@ -7,50 +7,37 @@ import java.util.Date;
 public class Lectures {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @Column(name = "Title")
-    String lectTitle;
+    private String lectureTitle;
 
-    @Column(name = "URL", unique = true)
-    String lectURL;
+    @Column(unique = true)
+    private String lectureURL;
 
-    @Column(name = "LectureDate")
-    Date lectDate;
+    private Date lectureDate;
 
-    @Column(name = "Venue")
-    String venue;
+    private String lectureVenue;
 
-    @Column(name = "City")
-    String city;
+    private String lectureCity;
 
-    @Column(name = "Category")
-    Category category;
+    private LectCategories lectureCategory;
 
-    @Column(name = "Speaker")
-    String speaker;
+    private String lectureSpeaker;
 
-    @Column(name = "AvgRating")
-    double avgRating;
+    private double lectureAvgRating;
 
-    @Column(name = "Language")
-    String lang;
+    private String lectureLang;
 
-    @Column(name = "Views")
-    Integer views;
+    private Integer lectureviews;
 
-    @Column(name = "UploadedOn")
-    Date uploadOn;
+    private Date lectureDateUploaded;
 
-    @Column(name = "UpdatedOn")
-    Date updateOn;
+    private Date lectureDateUpdatedOn;
 
-    @Column(name = "uploadedBy")
-    User uploadedBy;
+    private UserInfo lectureUploadedBy;
 
-    @Column(name = "updatedBy")
-    User updatedBy;
+    private UserInfo lectureUpdatedBy;
 
     public Long getId() {
         return id;
@@ -60,115 +47,115 @@ public class Lectures {
         this.id = id;
     }
 
-    public String getLectTitle() {
-        return lectTitle;
+    public String getLectureTitle() {
+        return lectureTitle;
     }
 
-    public void setLectTitle(String lectTitle) {
-        this.lectTitle = lectTitle;
+    public void setLectureTitle(String lectureTitle) {
+        this.lectureTitle = lectureTitle;
     }
 
-    public String getLectURL() {
-        return lectURL;
+    public String getLectureURL() {
+        return lectureURL;
     }
 
-    public void setLectURL(String lectURL) {
-        this.lectURL = lectURL;
+    public void setLectureURL(String lectureURL) {
+        this.lectureURL = lectureURL;
     }
 
-    public Date getLectDate() {
-        return lectDate;
+    public Date getLectureDate() {
+        return lectureDate;
     }
 
-    public void setLectDate(Date lectDate) {
-        this.lectDate = lectDate;
+    public void setLectureDate(Date lectureDate) {
+        this.lectureDate = lectureDate;
     }
 
-    public String getVenue() {
-        return venue;
+    public String getLectureVenue() {
+        return lectureVenue;
     }
 
-    public void setVenue(String venue) {
-        this.venue = venue;
+    public void setLectureVenue(String lectureVenue) {
+        this.lectureVenue = lectureVenue;
     }
 
-    public String getCity() {
-        return city;
+    public String getLectureCity() {
+        return lectureCity;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setLectureCity(String lectureCity) {
+        this.lectureCity = lectureCity;
     }
 
-    public Category getCategory() {
-        return category;
+    public LectCategories getLectureCategory() {
+        return lectureCategory;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setLectureCategory(LectCategories lectureCategory) {
+        this.lectureCategory = lectureCategory;
     }
 
-    public String getSpeaker() {
-        return speaker;
+    public String getLectureSpeaker() {
+        return lectureSpeaker;
     }
 
-    public void setSpeaker(String speaker) {
-        this.speaker = speaker;
+    public void setLectureSpeaker(String lectureSpeaker) {
+        this.lectureSpeaker = lectureSpeaker;
     }
 
-    public double getAvgRating() {
-        return avgRating;
+    public double getLectureAvgRating() {
+        return lectureAvgRating;
     }
 
-    public void setAvgRating(double avgRating) {
-        this.avgRating = avgRating;
+    public void setLectureAvgRating(double lectureAvgRating) {
+        this.lectureAvgRating = lectureAvgRating;
     }
 
-    public String getLang() {
-        return lang;
+    public String getLectureLang() {
+        return lectureLang;
     }
 
-    public void setLang(String lang) {
-        this.lang = lang;
+    public void setLectureLang(String lectureLang) {
+        this.lectureLang = lectureLang;
     }
 
-    public Integer getViews() {
-        return views;
+    public Integer getLectureviews() {
+        return lectureviews;
     }
 
-    public void setViews(Integer views) {
-        this.views = views;
+    public void setLectureviews(Integer lectureviews) {
+        this.lectureviews = lectureviews;
     }
 
-    public Date getUploadOn() {
-        return uploadOn;
+    public Date getLectureDateUploaded() {
+        return lectureDateUploaded;
     }
 
-    public void setUploadOn(Date uploadOn) {
-        this.uploadOn = uploadOn;
+    public void setLectureDateUploaded(Date lectureDateUploaded) {
+        this.lectureDateUploaded = lectureDateUploaded;
     }
 
-    public Date getUpdateOn() {
-        return updateOn;
+    public Date getLectureDateUpdatedOn() {
+        return lectureDateUpdatedOn;
     }
 
-    public void setUpdateOn(Date updateOn) {
-        this.updateOn = updateOn;
+    public void setLectureDateUpdatedOn(Date lectureDateUpdatedOn) {
+        this.lectureDateUpdatedOn = lectureDateUpdatedOn;
     }
 
-    public User getUploadedBy() {
-        return uploadedBy;
+    public UserInfo getLectureUploadedBy() {
+        return lectureUploadedBy;
     }
 
-    public void setUploadedBy(User uploadedBy) {
-        this.uploadedBy = uploadedBy;
+    public void setLectureUploadedBy(UserInfo lectureUploadedBy) {
+        this.lectureUploadedBy = lectureUploadedBy;
     }
 
-    public User getUpdatedBy() {
-        return updatedBy;
+    public UserInfo getLectureUpdatedBy() {
+        return lectureUpdatedBy;
     }
 
-    public void setUpdatedBy(User updatedBy) {
-        this.updatedBy = updatedBy;
+    public void setLectureUpdatedBy(UserInfo lectureUpdatedBy) {
+        this.lectureUpdatedBy = lectureUpdatedBy;
     }
 }
