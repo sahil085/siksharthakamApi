@@ -14,7 +14,10 @@ public class Lectures {
     private String lectureTitle;
 
     @Column(unique = true)
-    private String lectureURL;
+    private String mp3URL;
+
+    @Column(unique = true)
+    private String downloadURL;
 
     private Date lectureDate;
 
@@ -23,9 +26,9 @@ public class Lectures {
     private String lectureCity;
 
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinTable(name="lecture_categories",
-            joinColumns = {@JoinColumn(name="lecture_id", referencedColumnName="id")},
-            inverseJoinColumns = {@JoinColumn(name="category_id", referencedColumnName="id")}
+    @JoinTable(name=("lecture_categories"),
+            joinColumns = {@JoinColumn(name=("lecture_id"), referencedColumnName=("id"))},
+            inverseJoinColumns = {@JoinColumn(name=("category_id"), referencedColumnName=("id"))}
     )
     private Set<LectureCategories> lectureCategory;
 
@@ -41,9 +44,9 @@ public class Lectures {
 
     private Date lectureDateUpdatedOn;
 
-    private UserInfo lectureUploadedBy;
+    public UserInfo lectureUploadedBy;
 
-    private UserInfo lectureUpdatedBy;
+    public UserInfo lectureUpdatedBy;
 
     public Long getId() {
         return id;
@@ -59,14 +62,6 @@ public class Lectures {
 
     public void setLectureTitle(String lectureTitle) {
         this.lectureTitle = lectureTitle;
-    }
-
-    public String getLectureURL() {
-        return lectureURL;
-    }
-
-    public void setLectureURL(String lectureURL) {
-        this.lectureURL = lectureURL;
     }
 
     public Date getLectureDate() {
@@ -99,6 +94,22 @@ public class Lectures {
 
     public void setLectureCategory(Set<LectureCategories> lectureCategory) {
         this.lectureCategory = (Set<LectureCategories>) lectureCategory;
+    }
+
+    public String getMP3URL() {
+        return mp3URL;
+    }
+
+    public void setMP3URL(String MP3URL) {
+        this.mp3URL = MP3URL;
+    }
+
+    public String getDownloadURL() {
+        return downloadURL;
+    }
+
+    public void setDownloadURL(String downloadURL) {
+        this.downloadURL = downloadURL;
     }
 
     public String getLectureSpeaker() {

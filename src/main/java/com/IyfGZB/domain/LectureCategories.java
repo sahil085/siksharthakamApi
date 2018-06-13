@@ -20,13 +20,6 @@ public class LectureCategories {
 
     private UserInfo lectureCategoryUpdatedBy;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinTable(name="categories_lectures",
-            joinColumns = {@JoinColumn(name="category_id", referencedColumnName="id")},
-            inverseJoinColumns = {@JoinColumn(name="lecture_id", referencedColumnName="id")}
-    )
-    private Lectures lecture;
-
     public Long getId() {
         return id;
     }

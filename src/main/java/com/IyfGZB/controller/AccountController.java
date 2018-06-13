@@ -36,6 +36,7 @@ public class AccountController {
 
 	// request method to create a new account by a guest
 	@CrossOrigin
+	@ResponseBody
 	@RequestMapping(value = "/register", method = RequestMethod.PUT)
 	public ResponseEntity<?> createUser(@RequestBody UserInfo newUser) {
 		if (userService.find(newUser.getUsername()) != null) {
